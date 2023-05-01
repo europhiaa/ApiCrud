@@ -1,10 +1,12 @@
 package com.europhia.apicrud.controllers;
 
 import com.europhia.apicrud.entities.CarEntity;
+import com.europhia.apicrud.entities.CarImage;
 import com.europhia.apicrud.repositories.CarRepository;
 import com.europhia.apicrud.response.CommonResponse;
 import com.europhia.apicrud.response.CommonResponseGenerator;
 import com.europhia.apicrud.services.CarService;
+import com.europhia.apicrud.wrappers.CarImageWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -109,6 +111,16 @@ public class CarController {
             carService.deleteCar(id);
             List<CarEntity> carList = carService.getAllCar();
             return commonResponseGenerator.successResponse(carList, "Sukses hapus data id : "+id);
+        } catch (Exception e){
+            return commonResponseGenerator.failedResponse(e.getMessage());
+        }
+    }
+
+    @PostMapping(value = "upload-car")
+    public CommonResponse<CarImage> upload(@RequestBody CarImageWrapper param){
+        try{
+            CarImage car = carService.upload(param);
+            return commonResponseGenerator.successResponse(car, "Sukses upload image");
         } catch (Exception e){
             return commonResponseGenerator.failedResponse(e.getMessage());
         }
