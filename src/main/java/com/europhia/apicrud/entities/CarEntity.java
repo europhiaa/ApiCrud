@@ -1,10 +1,11 @@
 package com.europhia.apicrud.entities;
 
+import com.europhia.apicrud.audit.AuditableBase;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "car")
-public class CarEntity {
+public class CarEntity extends AuditableBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -2,7 +2,6 @@ package com.europhia.apicrud.controllers;
 
 import com.europhia.apicrud.entities.CarEntity;
 import com.europhia.apicrud.entities.CarImage;
-import com.europhia.apicrud.repositories.CarRepository;
 import com.europhia.apicrud.response.CommonResponse;
 import com.europhia.apicrud.response.CommonResponseGenerator;
 import com.europhia.apicrud.services.CarService;
