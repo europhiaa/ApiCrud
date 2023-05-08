@@ -4,11 +4,10 @@ import com.europhia.apicrud.audit.AuditableBase;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "car")
+@Table(name = "tbcar")
 public class CarEntity extends AuditableBase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String carName;
     private String type;
