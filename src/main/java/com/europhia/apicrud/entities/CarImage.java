@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Entity
 public class CarImage extends AuditableBase {
     @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private int id;
 
     @ManyToOne
